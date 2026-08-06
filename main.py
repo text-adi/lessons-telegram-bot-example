@@ -35,6 +35,9 @@ async def command_start_handler(message: Message) -> None:
     """Обробник команди /start"""
     await message.answer(f"Привіт, {html.quote(message.from_user.full_name)}! Бот успішно запущений.")
 
+@dp.message()
+async def something(message: Message) -> None:
+    await message.answer(message.text)
 
 async def on_startup(bot: Bot) -> None:
     """Дії при запуску (встановлення вебхука)"""
